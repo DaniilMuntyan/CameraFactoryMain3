@@ -1,0 +1,22 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import "google/protobuf/empty.proto";
+import "com.example.demo.entities/myUuid.proto";
+import "com.example.demo.entities/dimensions.proto";
+import "com.example.demo.entities/cameraParts.proto";
+package kpi.trspo.restapp;
+
+message AssembleCameraRequest {
+  MyUuid collectorId = 1;
+  MyUuid backId = 2;
+  MyUuid bodyId = 3;
+  MyUuid lensId = 4;
+}
+
+message AssembleCameraResponse {
+    CameraGrpc camera = 1;
+}
+
+service AssembleCameraService {
+  rpc assembleCamera(AssembleCameraRequest) returns (AssembleCameraResponse);
+}
