@@ -31,19 +31,5 @@ public class MyRunner implements CommandLineRunner {
                 .getNameSurnamePhone(inputDataHandler.getDataForTesting());
         EmployeeDTO collectorDTO = new EmployeeDTO(employee.get(0), employee.get(1), employee.get(2));
         rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.CREATE_COLLECTOR_ROUTING, collectorDTO);
-
-        /*ArrayList<String> employee = (ArrayList<String>) AssembleState.inputDataHandler
-                .getNameSurnamePhone(AssembleState.inputDataHandler.getDataForTesting());
-        EmployeeDTO employeeDTO = new EmployeeDTO(employee.get(0), employee.get(1), employee.get(2));
-        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.CREATE_MANAGER_ROUTING,
-                employeeDTO);*/
-
-        /*MachineDTO machineDTO = new MachineDTO(AssembleState.inputDataHandler.getRandomRobot());
-        System.out.println("SEND CREATE PACKER. " + machineDTO);
-        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.CREATE_PACKER_ROUTING, machineDTO);*/
-
-        /*String randomName = AssembleState.inputDataHandler.getRandomRobot();
-        MachineDTO machineDTO = new MachineDTO(randomName);
-        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.CREATE_CALIBRATOR_ROUTING, machineDTO);*/
     }
 }

@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
 public final class EndPoints {
-    public static final String IP = "35.205.53.250";
+    public static final String IP = "35.205.234.216";
     public static final Integer GRPC_PORT = 6565; // Порт на LoadBalancer'е, на котором слушает grpc
     private static final String URL = "http://" + IP + ":8080"; // IP LoadBalancer'а удаленного кластера gcp
 
